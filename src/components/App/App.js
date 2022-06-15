@@ -5,7 +5,7 @@ import WalletBalance from '../WalletBalance/WalletBalance'
 function App() {
   return(
     <div className="WalletBalance">
-      <WalletBalance />
+      <WalletBalance apikey={process.env.REACT_APP_COVALENT_API_KEY} />
     </div>
   )
 }

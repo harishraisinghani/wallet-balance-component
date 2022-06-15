@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './WalletBalance.css';
 
-export default function WalletBalance() {
+export default function WalletBalance(props) {
   const [data, getData] = useState([])
   const [address, setAddress] = useState("demo.eth")
 
@@ -18,7 +18,7 @@ export default function WalletBalance() {
   }
 
   const fetchData = () => {
-    const URL = `https://api.covalenthq.com/v1/1/address/${address}/balances_v2/?quote-currency=USD&format=JSON&nft=true&no-nft-fetch=false&key=${process.env.REACT_APP_COVALENT_API_KEY}`;
+    const URL = `https://api.covalenthq.com/v1/1/address/${address}/balances_v2/?quote-currency=USD&format=JSON&nft=true&no-nft-fetch=false&key=${props.apikey}`;
     fetch(URL)
       .then((res) =>
         res.json())
