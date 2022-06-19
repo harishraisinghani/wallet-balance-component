@@ -2,6 +2,7 @@ import babel from '@rollup/plugin-babel';
 import external from 'rollup-plugin-peer-deps-external';
 import del from 'rollup-plugin-delete';
 import postcss from 'rollup-plugin-postcss';
+import image from '@rollup/plugin-image';
 import pkg from './package.json';
 
 export default {
@@ -16,6 +17,7 @@ export default {
           minimize: true,
         }),
         external(),
+        image(),
         babel({
             exclude: 'node_modules/**',
             babelHelpers: 'bundled' 
